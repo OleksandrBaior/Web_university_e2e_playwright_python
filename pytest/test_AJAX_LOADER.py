@@ -1,0 +1,1 @@
+# Wait for button and click it
