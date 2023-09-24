@@ -19,6 +19,7 @@ coment_field = '//*[@id="contact_form"]/textarea'
 submit_button = '//*[@id="form_buttons"]/input[2]'
 thanks_text = '//*[@id="contact_reply"]/h1'
 error_all_field_required_text = "//html/body"
+reset_button = '//*[@id="form_buttons"]/input[1]'
 
 # @pytest.mark.skip("chromium")
 # @pytest.mark.only_browser("firefox")
@@ -57,3 +58,17 @@ def test_verify_submit_comment_with_all_with_invalid_email(page: Page):
     expect(page.locator(coment_field)).to_have_value(COMMENT)
     page.locator(submit_button).click()
     expect(page.locator(error_all_field_required_text)).to_contain_text(ERROR_INVALID_EMAIL)
+
+
+def test_verify_reset_button(page: Page):
+    page.goto(BASE_URL)
+    page.locator(first_name_fild).fill(FIRST_NAME)
+    page.locator(second_name_field).fill(SECOND_NAME)
+    page.locator(email_field).fill(INVALID_EMAIL)
+    page.locator(coment_field).fill(COMMENT)
+
+    page.locator(reset_button).click()
+    expect(page.locator(first_name_fild)).to_have_value('')
+    expect(page.locator(second_name_field)).to_have_value('')
+    expect(page.locator(coment_field)).to_have_value('')
+    expect(page.locator(email_field)).to_have_value('')
