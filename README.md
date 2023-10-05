@@ -4,20 +4,34 @@ Common webelements on websites. e2e testing using python
 1. If you receive “no module named pip” error you probably do not have pip installed. Run this command:
 py -m ensurepip --upgrade (Windows)
 or:
+```
 python -m ensurepip --upgrade (MacOS/Linux)
-2. Install package manager:
+```
+3. Install package manager:
+```
 pip install
-3. Next let’s create an isolated virtual environment (to hold our project’s libraries
+```
+5. Next let’s create an isolated virtual environment (to hold our project’s libraries
 isolated from global environment):
-pipenv shel
-4. First we need pytest-playwright. We can skip ==<VERSION> part as this project
-does not require any specific version installed:
+```
+pipenv shell
+```
+7. First we need pytest-playwright:
+```
 pipenv install pytest-playwrigh
-5. Than we need to install browsers (or a specific browser to run our tests against)
+````
+9. Than we need to install browsers (or a specific browser to run our tests against)
 playwright install will install all the browsers used by playwright
 As of right now we’re going to use only Chrome browser run:
-playwright install chromiu
-6. Running test:
+```
+playwright install chromium
+```
+11. Running test:
+```
 pytest
-7. Runing specific test with mark:
-pytest -m * (@pytest.mark.*)
+```
+12. Runing specific test with mark:  (@pytest.mark.*)
+```
+pytest -m *
+```
+
