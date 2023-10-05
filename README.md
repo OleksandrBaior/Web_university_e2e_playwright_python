@@ -19,3 +19,5 @@ As of right now we’re going to use only Chrome browser run:
 playwright install chromiu
 6. Running test:
 pytest
+7. Runing specific test with mark:
+pytest -m * (@pytest.mark.*)
