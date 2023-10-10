@@ -11,7 +11,7 @@ class Test_Accordion_and_text_affects:
     @pytest.fixture
     def test_setup(self, page):
         self.page = page
-        # self.page.set_viewport_size(viewport_size={'width': 1920, 'height': 1080})
+        self.page.set_viewport_size(viewport_size={'width': 1920, 'height': 1080})
         self.accordion_and_text_affects = Accordion_and_text_affects(self.page)
         page.goto('/Accordion/index.html')
 

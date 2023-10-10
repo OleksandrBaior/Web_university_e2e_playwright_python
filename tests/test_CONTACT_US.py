@@ -1,6 +1,5 @@
 # Fill all the froms and test the buttons
 
-
 from playwright.sync_api import Page, expect
 import pytest
 
