@@ -3,7 +3,7 @@ Common webelements on websites. e2e testing using python
 
 1.  Install Python
 ```
-www.python.org/downloads/
+https://www.python.org/downloads/
 ```
 2. Install python package installer:
 ```
