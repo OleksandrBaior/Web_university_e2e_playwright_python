@@ -38,7 +38,7 @@ class Dropdown_checkboxes_radioButtons:
         for i in range(COUNT_ELEMENTS):
             self.page.locator(f'//*[@id="radio-buttons"]/input[{i+1}]').check()
 
-            for y in range(COUNT_ELEMENTS-1):
+            for y in range(COUNT_ELEMENTS):
                 if i+1 == y+1:
                     expect(self.page.locator(f'//*[@id="radio-buttons"]/input[{y+1}]')).to_be_checked()
                 else:

@@ -25,7 +25,7 @@ class test_DROPDOWN_CHECKBOX_AND_RADIO_BUTTON:
         self.dropdown_checkboxes_radioButtons.mark_checkbox(self.dropdown_checkboxes_radioButtons.checkbox)
         self.dropdown_checkboxes_radioButtons.check_all_checkboxes_marked(self.dropdown_checkboxes_radioButtons.checkbox)
 
-    @pytest.mark.menu
+    @pytest.mark.test
     def test_radio_buttons(self, test_setup):
         self.page.pause()
         self.dropdown_checkboxes_radioButtons.mark_and_check_radio_button(self.dropdown_checkboxes_radioButtons.radion_buttons)
