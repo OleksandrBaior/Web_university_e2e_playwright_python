@@ -2,9 +2,9 @@
 Common webelements on websites. e2e testing using python
 
 1.  Install Python
-
-[https://www.python.org/downloads/](https://www.python.org/downloads/)
-
+```
+https://www.python.org/downloads/
+```
 2. Install python package installer:
 ```
 py -m ensurepip --upgrade (Windows)
