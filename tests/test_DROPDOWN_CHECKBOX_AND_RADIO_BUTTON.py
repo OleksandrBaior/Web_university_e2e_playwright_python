@@ -25,9 +25,19 @@ class test_DROPDOWN_CHECKBOX_AND_RADIO_BUTTON:
         self.dropdown_checkboxes_radioButtons.mark_checkbox(self.dropdown_checkboxes_radioButtons.checkbox)
         self.dropdown_checkboxes_radioButtons.check_all_checkboxes_marked(self.dropdown_checkboxes_radioButtons.checkbox)
 
-    @pytest.mark.test
+    @pytest.mark.menu
     def test_radio_buttons(self, test_setup):
-        self.page.pause()
         self.dropdown_checkboxes_radioButtons.mark_and_check_radio_button(self.dropdown_checkboxes_radioButtons.radion_buttons)
+
+    @pytest.mark.menu
+    def test_selected_disabled_radio_buttons(self, test_setup):
+        self.dropdown_checkboxes_radioButtons.mark_selected_disabled_radio_buttons(self.dropdown_checkboxes_radioButtons.selected_disabled_radio_buttons)
+        expect(self.dropdown_checkboxes_radioButtons.disabled_radio_button_element).to_be_disabled()
         
-    
+    @pytest.mark.menu
+    def test_selected_disabled_drop_down(self, test_setup):
+        self.dropdown_checkboxes_radioButtons.selected_disabled_drop_down_option(self.dropdown_checkboxes_radioButtons.selected_disabled_drop_down_list)
+        expect(self.dropdown_checkboxes_radioButtons.disabled_drop_down_element).to_be_disabled()
+
+
+
