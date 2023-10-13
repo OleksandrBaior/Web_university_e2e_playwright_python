@@ -8,10 +8,10 @@ import pytest
 class test_DROPDOWN_CHECKBOX_AND_RADIO_BUTTON:
 
     @pytest.fixture
-    def test_setup(self, page):
-        self.page = page
-        self.page.set_viewport_size(viewport_size={'width': 1920, 'height': 1080})
-        page.goto('/Dropdown-Checkboxes-RadioButtons/index.html')
+    def test_setup(self, new_page):
+        self.page = new_page
+        # self.page.set_viewport_size(viewport_size={'width': 1920, 'height': 1080})
+        self.page.goto('/Dropdown-Checkboxes-RadioButtons/index.html')
         self.dropdown_checkboxes_radioButtons = Dropdown_checkboxes_radioButtons(self.page)
     
     @pytest.mark.menu
@@ -34,7 +34,7 @@ class test_DROPDOWN_CHECKBOX_AND_RADIO_BUTTON:
         self.dropdown_checkboxes_radioButtons.mark_selected_disabled_radio_buttons(self.dropdown_checkboxes_radioButtons.selected_disabled_radio_buttons)
         expect(self.dropdown_checkboxes_radioButtons.disabled_radio_button_element).to_be_disabled()
         
-    @pytest.mark.menu
+    @pytest.mark.test
     def test_selected_disabled_drop_down(self, test_setup):
         self.dropdown_checkboxes_radioButtons.selected_disabled_drop_down_option(self.dropdown_checkboxes_radioButtons.selected_disabled_drop_down_list)
         expect(self.dropdown_checkboxes_radioButtons.disabled_drop_down_element).to_be_disabled()
