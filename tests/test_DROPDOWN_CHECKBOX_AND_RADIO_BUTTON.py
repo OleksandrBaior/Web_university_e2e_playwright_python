@@ -13,7 +13,6 @@ class test_DROPDOWN_CHECKBOX_AND_RADIO_BUTTON:
         self.page.goto('/Dropdown-Checkboxes-RadioButtons/index.html')
         self.dropdown_checkboxes_radioButtons = Dropdown_checkboxes_radioButtons(self.page)
         
-    
     @pytest.mark.menu
     def test_dropdown_menu(self, test_setup) -> None:
         self.dropdown_checkboxes_radioButtons.select_drop_down_option(self.dropdown_checkboxes_radioButtons.dropdown_menu_1, self.dropdown_checkboxes_radioButtons.drop_down_1)
