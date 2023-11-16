@@ -29,7 +29,19 @@ class Test_Actions:
     @pytest.mark.actions
     def test_hover_three_section(self, test_setup) -> None:
         self.actions.hover_first.hover()
-        expect(self.actions.link_1_hover_first).to_be_visible()
-        self.actions.link_1_hover_first.click()
-        self.page.on("dialog", lambda dialog: dialog.accept())
+        self.actions.check_element_visible(self.actions.link_1_hover, None)
+
+        self.actions.hover_second.hover()
+        self.actions.check_element_visible(self.actions.link_2_hover, None)
+
+        self.actions.hover_third.hover()
+        self.actions.check_element_visible(self.actions.link_3_hover_1, self.actions.link_3_hover_2)
+
+    @pytest.mark.actions
+    def test_click_and_hold_section(self, test_setup) -> None:
         self.page.pause()
+        expect(self.actions.click_and_hold_btn).to_contain_text('Click and Hold!')
+        self.actions.click_and_hold_element(self.actions.click_and_hold_btn)
+        expect(self.actions.click_and_hold_btn).to_contain_text('Well done! keep holding that click now.....')
+        self.page.mouse.up()
+        expect(self.actions.click_and_hold_btn).to_contain_text('Dont release me!!!')
